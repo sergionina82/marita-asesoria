@@ -16,6 +16,14 @@
     });
   }
 
+  document.querySelectorAll('[data-scroll-top]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      history.pushState(null, '', '#inicio');
+    });
+  });
+
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
